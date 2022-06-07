@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>booklist vueJs</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h1 class="h1">Hello Vue</h1>
+    <div id="app">
+        <div v-if="showBook">
+            <ul>
+                <li @click="toggleIsFav(book)" v-for="book in books " :class="{fav:book.isFav}">
+                    <h3>{{book.title}}</h3>
+                    <p>{{ book.author }}</p>
+                </li>
+            </ul>
+        </div>
+        <button @click="showBooks">
+        <span v-if="showBook">Hide Books</span>
+        <span v-else>Show Books</span>
+      </button>
+    </div>
+    <script src="https://unpkg.com/vue@3.0.5"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
